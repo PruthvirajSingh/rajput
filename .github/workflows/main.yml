@@ -22,12 +22,10 @@ jobs:
         - uses: actions/setup-node@v3
           with:
             node-version: 18
-
-        - name: Install
-          run: npm install
         - name: Test
           run: |
             cd  master/rajput/new test cases
+            npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
             
