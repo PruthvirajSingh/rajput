@@ -1,0 +1,73 @@
+name: CI
+on: [pull_request,push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+        - name: Checkout
+          
+          uses: actions/checkout@v3
+        # - name: Checkout private tools
+        #   uses: actions/checkout@v3
+        #   with:
+        #    repository: PruthvirajSingh/Application.git
+        #    token: ${{ secrets.TOKEN }} # `GH_PAT` is a secret that contains your PAT
+        #    path: main
+        
+
+          
+        - uses: actions/setup-node@v3
+          with:
+            node-version: 18
+
+        - name: Install
+          run: npm install
+        - name: Test
+          run: |
+            
+            pwd
+            npx wdio run ./wdio.conf.js --spec
+            
+        - uses: actions/upload-artifact@v1
+          if: failure()
+          with:
+            name: logs
+            path: logs
+        - name: Get Allure history
+          uses: actions/checkout@v2
+          if: always()
+          continue-on-error: true
+          with:
+              ref: gh-pages
+              path: gh-pages
+        # - uses: actions/upload-artifact@v3
+        #   with:
+        #     name: allureReport
+
+        #     path: 
+        #       ./allure-report
+        - name: Allure Report action from marketplace
+          uses: simple-elf/allure-report-action@master
+          if: always()
+
+          with:
+                 allure_results: allure-results
+                 allure_history: allure-history
+                 keep_reports: 1
+        
+          #https://github.com/PruthvirajSingh/Application.git
+
+
+       
+        - name: Deploy report to Github Pages
+          if: always()
+          uses: peaceiris/actions-gh-pages@v2
+          env:
+           PERSONAL_TOKEN: ${{secrets.TOKEN}}
+           PUBLISH_BRANCH: gh-pages
+           
+           PUBLISH_DIR: allure-history
+           

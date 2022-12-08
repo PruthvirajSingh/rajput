@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Demo Test case" timestamp="2022-11-28T15:41:37" time="19.532" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="Demo Test case"/>
+      <property name="capabilities" value="chrome.107_0_5304_63.windows"/>
+      <property name="file" value=".\test\TestCase\DemoTestCase.js"/>
+    </properties>
+    <testcase classname="chrome.107_0_5304_63.windows.Demo_Test_case" name="verfiy that the login text is displayed" time="19.523">
+      <system-out><![CDATA[
+COMMAND: POST /session/4c666467bec5d7b8ebf59879353583a30e519d65/window/maximize - {}
+RESULT: {}
+COMMAND: POST /session/4c666467bec5d7b8ebf59879353583a30e519d65/url - {"url":"https://www.surveymonkey.com/"}
+RESULT: {"url":"https://www.surveymonkey.com/"}
+COMMAND: POST /session/4c666467bec5d7b8ebf59879353583a30e519d65/element - {"using":"xpath","value":"//a[text()='Log in']"}
+RESULT: {"using":"xpath","value":"//a[text()='Log in']"}
+COMMAND: POST /session/4c666467bec5d7b8ebf59879353583a30e519d65/element/a0087ce1-6443-4d67-9c3d-3e105b8f8a84/click - {}
+RESULT: {}
+COMMAND: POST /session/4c666467bec5d7b8ebf59879353583a30e519d65/element - {"using":"xpath","value":"(//h1[text()='Log in'])[2]"}
+RESULT: {"using":"xpath","value":"(//h1[text()='Log in'])[2]"}
+COMMAND: GET /session/4c666467bec5d7b8ebf59879353583a30e519d65/element/5d4c4eea-524c-4b1f-889e-17fdfc0036b3/text - {}
+RESULT: {}
+COMMAND: DELETE /session/4c666467bec5d7b8ebf59879353583a30e519d65 - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>
