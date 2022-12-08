@@ -24,7 +24,7 @@ jobs:
             node-version: 18
         - name: Test
           run: |
-            cd  master/rajput/new test cases
+            cd  ${GITHUB_WORKSPACE}/new test cases
             npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
