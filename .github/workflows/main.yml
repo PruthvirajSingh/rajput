@@ -29,7 +29,8 @@ jobs:
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-            cd ${GITHUB_WORKSPACE}/new test cases
+            cd ${GITHUB_WORKSPACE}
+            cd new test case
             npm install
             pwd
             npm run test
