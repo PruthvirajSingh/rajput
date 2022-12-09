@@ -8,16 +8,14 @@ jobs:
     defaults:
       run:
         working-directory: ./new test cases
-
     steps:
         - name: Checkout
-          
           uses: actions/checkout@v3          
         - uses: actions/setup-node@v3
           with:
             node-version: 15.0.0
         - name: Test
-          working-directory: ./new test cases
+
           run: |
             echo ${GITHUB_REPOSITORY}
             ls       
@@ -47,6 +45,5 @@ jobs:
           env:
            PERSONAL_TOKEN: ${{secrets.TOKEN}}
            PUBLISH_BRANCH: gh-pages
-           
-           PUBLISH_DIR: ./allure-history
+           PUBLISH_DIR: allure-history
            
