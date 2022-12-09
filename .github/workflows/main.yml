@@ -27,6 +27,7 @@ jobs:
         - name: Test
           run: |
             echo "HOME: ${HOME}"
+            echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             cd home/runner/work/rajput/package.json
             npm install
             pwd
