@@ -36,7 +36,7 @@ jobs:
           continue-on-error: true
           with:
               ref: gh-pages
-              path: ./new test casesgh-pages
+              path: gh-pages
         # - uses: actions/upload-artifact@v3
         #   with:
         #     name: allureReport
@@ -65,5 +65,5 @@ jobs:
            PERSONAL_TOKEN: ${{secrets.TOKEN}}
            PUBLISH_BRANCH: gh-pages
            
-           PUBLISH_DIR: ./new test cases/allure-history
+           PUBLISH_DIR: allure-history
            
