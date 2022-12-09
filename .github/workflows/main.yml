@@ -14,7 +14,7 @@ jobs:
           uses: actions/checkout@v3
           with:
            repository: PruthvirajSingh/rajput
-           path: ${GITHUB_REPOSITORY}/new test cases
+           path: ${GITHUB_REPOSITORY}
         # - name: Checkout private tools
 
         #   uses: actions/checkout@v3
@@ -22,20 +22,18 @@ jobs:
         #    repository: PruthvirajSingh/Application.git
         #    token: ${{ secrets.TOKEN }} # `GH_PAT` is a secret that contains your PAT
         #    path: main
-        
-
-          
+           
         - uses: actions/setup-node@v3
           with:
             node-version: 15.0.0
         - name: Test
           run: |
-            cd ${GITHUB_REPOSITORY}
+            echo $${GITHUB_REPOSITORY}
+            ls
+            cd ${GITHUB_REPOSITORY}\new test cases
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-            
-
             npm install
             pwd
             npm run test
