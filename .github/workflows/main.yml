@@ -28,11 +28,12 @@ jobs:
 
         - name: Get Allure history
           uses: actions/checkout@v2
+          
           if: always()
           continue-on-error: true
           with:
               ref: gh-pages
-              path: gh-pages
+              path: ./new test casesgh-pages
         # - uses: actions/upload-artifact@v3
         #   with:
         #     name: allureReport
@@ -40,9 +41,11 @@ jobs:
         #     path: 
         #       ./allure-report
         - name: Allure Report action from marketplace
+          
           uses: simple-elf/allure-report-action@master
+          
           if: always()
-
+          
           with:
                  allure_results: allure-results
                  allure_history: allure-history
