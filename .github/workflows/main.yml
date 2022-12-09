@@ -5,6 +5,9 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./new test cases
 
     steps:
         - name: Checkout
