@@ -28,10 +28,10 @@ jobs:
           run: |
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-            cd main
+
             npm install
             pwd
-            npx wdio run ./wdio.conf.js --spec
+            npm run test
             
 
         - name: Get Allure history
