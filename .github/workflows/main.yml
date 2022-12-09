@@ -12,10 +12,8 @@ jobs:
         - name: Checkout
           uses: actions/checkout@v3          
         - uses: actions/setup-node@v3
-          with:
-            node-version: 15.0.0
+        
         - name: Test case Execution
-
           run: |
             echo ${GITHUB_REPOSITORY}
             ls       
@@ -25,11 +23,11 @@ jobs:
             npm install
             pwd
             npm run test
-        - uses: actions/upload-artifact@v1
+        - uses: actions/upload-artifact@v3
           if: failure()
           with:
             name: logs
-            path: logs
+            path: ./logs
         - name: Get Allure History
           uses: actions/checkout@v3
           if: always()
@@ -46,7 +44,7 @@ jobs:
                  keep_reports: 1
         - name: Deploy report to Github Pages
           if: always()
-          uses: peaceiris/actions-gh-pages@v2
+          uses: peaceiris/actions-gh-pages@v3
           env:
            PERSONAL_TOKEN: ${{secrets.TOKEN}}
            PUBLISH_BRANCH: gh-pages
