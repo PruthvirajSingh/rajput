@@ -31,11 +31,7 @@ jobs:
             pwd
             npx wdio run ./wdio.conf.js --spec
             
-        - uses: actions/upload-artifact@v1
-          if: failure()
-          with:
-            name: logs
-            path: logs
+
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
