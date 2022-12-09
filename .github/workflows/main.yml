@@ -10,7 +10,11 @@ jobs:
         - name: Checkout
           
           uses: actions/checkout@v3
- 
+        - name: Checkout tools repo
+          uses: actions/checkout@v3
+          with:
+           repository: PruthvirajSingh/rajput
+           path: ${GITHUB_WORKSPACE}
         # - name: Checkout private tools
 
         #   uses: actions/checkout@v3
@@ -29,7 +33,7 @@ jobs:
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-
+            
 
             npm install
             pwd
