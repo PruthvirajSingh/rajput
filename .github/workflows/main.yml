@@ -13,8 +13,8 @@ jobs:
         - name: Checkout tools repo
           uses: actions/checkout@v3
           with:
-           repository: PruthvirajSingh
-           path: master/new test cases/pakage.json
+           repository: PruthvirajSingh/rajput
+           path: new test cases/pakage.json
         # - name: Checkout private tools
 
         #   uses: actions/checkout@v3
