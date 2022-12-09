@@ -41,9 +41,9 @@ jobs:
           if: always()
         #id: allure-report
           with:
-                 allure_results: ./allure-results
+                 allure_results: new test cases/allure-results
 
-                 allure_history: ./allure-history
+                 allure_history: new test cases/allure-history
                  keep_reports: 1
         - name: Deploy report to Github Pages
           if: always()
@@ -52,7 +52,7 @@ jobs:
            PERSONAL_TOKEN: ${{secrets.TOKEN}}
            PUBLISH_BRANCH: gh-pages
            
-           PUBLISH_DIR: ./allure-history
+           PUBLISH_DIR: new test cases/allure-history
            
 
            
