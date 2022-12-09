@@ -26,7 +26,7 @@ jobs:
             node-version: 18
         - name: Test
           run: |
-            cd ${GITHUB_WORKSPACE}/new test cases/test/TestCase
+            cd ${GITHUB_WORKSPACE}
             npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
