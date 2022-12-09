@@ -30,7 +30,7 @@ jobs:
             node-version: 15.0.0
         - name: Test
           run: |
-            cd ${GITHUB_REPOSITORY}/new test cases
+            cd ${GITHUB_REPOSITORY}
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
