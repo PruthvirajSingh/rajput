@@ -30,6 +30,7 @@ jobs:
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             
             cd ${GITHUB_WORKSPACE}
+            npm install
             pwd
             npm run test
             
