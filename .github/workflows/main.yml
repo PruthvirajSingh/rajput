@@ -32,7 +32,7 @@ jobs:
             ls       
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-            echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}\new test cases"
+            echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}/new test cases"
             cd ${GITHUB_REPOSITORY}\new test cases
             npm install
             pwd
