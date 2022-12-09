@@ -26,6 +26,7 @@ jobs:
             node-version: 18
         - name: Test
           run: |
+            echo "HOME: ${HOME}"
             cd home/runner/work/rajput/package.json
             npm install
             pwd
