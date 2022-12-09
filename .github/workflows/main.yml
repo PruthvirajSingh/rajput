@@ -30,7 +30,7 @@ jobs:
             node-version: 18
         - name: Test
           run: |
-
+            cd ./master
             npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
