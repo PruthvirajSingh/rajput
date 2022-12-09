@@ -23,13 +23,13 @@ jobs:
           
         - uses: actions/setup-node@v3
           with:
-            node-version: 16
+            node-version: 15.0.0
         - name: Test
           run: |
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
-            cd ${GITHUB_REPOSITORY}
+            cd ${GITHUB_REPOSITORY}/new test cases
             npm install
             pwd
             npm run test
