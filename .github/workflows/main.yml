@@ -27,37 +27,20 @@ jobs:
             npm install
             pwd
             npm run test
-            
-
         - name: Get Allure history
           uses: actions/checkout@v2
-          
           if: always()
           continue-on-error: true
           with:
               ref: gh-pages
               path: gh-pages
-        # - uses: actions/upload-artifact@v3
-        #   with:
-        #     name: allureReport
-
-        #     path: 
-        #       ./allure-report
         - name: Allure Report action from marketplace
-          
           uses: simple-elf/allure-report-action@master
-          
           if: always()
-          
           with:
                  allure_results: allure-results
                  allure_history: allure-history
                  keep_reports: 1
-        
-
-
-
-       
         - name: Deploy report to Github Pages
           if: always()
           uses: peaceiris/actions-gh-pages@v2
@@ -65,5 +48,5 @@ jobs:
            PERSONAL_TOKEN: ${{secrets.TOKEN}}
            PUBLISH_BRANCH: gh-pages
            
-           PUBLISH_DIR: allure-history
+           PUBLISH_DIR: ./allure-history
            
