@@ -34,7 +34,7 @@ jobs:
           continue-on-error: true
           with:
               ref: gh-pages
-              path: gh-pages
+              path: ./gh-pages
         # - uses: actions/upload-artifact@v3
         #   with:
         #     name: allureReport
