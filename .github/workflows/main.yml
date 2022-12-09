@@ -22,12 +22,12 @@ jobs:
             echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}/new test cases"
             npm install
             pwd
-            npm run test
+            npx wdio run ./wdio.conf.js --spec
         - uses: actions/upload-artifact@v3
           if: failure()
           with:
             name: logs
-            path: ./logs
+            path: logs
         - name: Get Allure History
           uses: actions/checkout@v3
           if: always()
