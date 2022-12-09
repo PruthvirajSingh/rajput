@@ -28,7 +28,7 @@ jobs:
           run: |
             echo "HOME: ${HOME}"
             echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
-            cd ${HOME}
+            cd ${GITHUB_WORKSPACE}
             npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
