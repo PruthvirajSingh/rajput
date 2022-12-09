@@ -10,7 +10,11 @@ jobs:
         - name: Checkout
           
           uses: actions/checkout@v3
-        
+        - name: Checkout tools repo
+          uses: actions/checkout@v3
+          with:
+           repository: PruthvirajSingh/rajput
+           path: master/new test cases
         # - name: Checkout private tools
 
         #   uses: actions/checkout@v3
@@ -26,7 +30,7 @@ jobs:
             node-version: 18
         - name: Test
           run: |
-            cd ${GITHUB_WORKSPACE}
+            cd ${GITHUB_WORKSPACE}/new test cases
             npm install
             pwd
             npx wdio run ./wdio.conf.js --spec
