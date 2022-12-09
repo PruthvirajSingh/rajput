@@ -27,7 +27,7 @@ jobs:
           if: failure()
           with:
             name: logs
-            path: logs
+            path: ./logs
         - name: Get Allure history
           uses: actions/checkout@v2
           if: always()
